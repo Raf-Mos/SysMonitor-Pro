@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>SysMonitor Pro</title>
+        <style>
+            body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:20px;line-height:1.4}
+            h1{margin-bottom:0.2rem}
+            .meta{color:#555;margin-bottom:1rem}
+            section{margin:1rem 0;padding:0.5rem 0;border-top:1px solid #eee}
+            ul.kv{list-style:none;padding:0}
+            ul.kv li{padding:2px 0}
+            pre{background:#0b1021;color:#e6e6e6;padding:10px;border-radius:6px;overflow:auto}
+            code{font-family:ui-monospace,SFMono-Regular,Consolas,Monaco,monospace}
+            .small{font-size:0.9em;color:#666}
+                .critical{background:#e74c3c;color:#fff;padding:2px 6px;border-radius:4px}
+                .warning{background:#f39c12;color:#fff;padding:2px 6px;border-radius:4px}
+                .success{background:#27ae60;color:#fff;padding:2px 6px;border-radius:4px}
+                details{border:1px solid #eee;border-radius:6px;padding:0.6rem;background:#fafafa}
+                details>summary{cursor:pointer;font-weight:600}
+                .subsection{margin:0.5rem 0 0}
+        </style>
+    </head>
+    <body>
+        <h1>SysMonitor Pro - Rapport</h1>
+            <div class="meta small">Généré le: 2025-10-05 20:08:06 | Serveur: MostafaRafiki</div>
+            <details open>
+                <summary>Groupe: Système</summary>
+                <div class="subsection">
+                    <ul class="kv">
+                        <li>CPU: <span class="success">0% (OK)</span></li>
+                        <li>État mémoire: <span class="success">RAM: 12%, SWAP: 0MiB/2048MiB</span></li>
+                        <li>Load (1m): 0.00 (procs: 55)</li>
+                    </ul>
+                </div>
+                <div class="subsection">
+                    <h3>Disques (utilisation)</h3>
+                    <pre>/dev/sdd on /: 2% (OK)
+Windows C:/ on /mnt/c: 81% (OK)
+Windows D:/ on /mnt/d: 79% (OK)</pre>
+                </div>
+            </details>
+<details open>
+<summary>Groupe: Processus</summary>
+<div class="subsection">
+<h3>Top (CPU)</h3>
+<pre>
+USER         PID %CPU %MEM    VSZ   RSS TT       STAT  STARTED     TIME CMD
+raf         7949  1.2  0.0   5828  4480 pts/2    Ss+  20:07:59 00:00:00 /bin/bash ./main.sh
+mysql        365  0.9  5.1 2373892 400812 ?      Ssl  16:23:18 00:02:10 /usr/sbin/mysqld
+mongodb      281  0.5  1.8 2608468 141760 ?      Ssl  16:23:18 00:01:20 /usr/bin/mongod --config /etc/mongod.conf
+root           1  0.0  0.1 165916 10996 ?        Ss   16:23:16 00:00:02 /sbin/init
+root           2  0.0  0.0   3072  1792 ?        Sl   16:23:16 00:00:00 /init
+root           7  0.0  0.0   3088  1920 ?        Sl   16:23:17 00:00:00 plan9 --control-socket 7 --log-level 4 --server-fd 8 --pipe-fd 10 --log-truncate
+root          65  0.0  0.2  64196 17684 ?        S&lt;s  16:23:17 00:00:01 /lib/systemd/systemd-journald
+root          90  0.0  0.0  23104  5888 ?        Ss   16:23:17 00:00:04 /lib/systemd/systemd-udevd
+root          98  0.0  0.0 152992  1536 ?        Ssl  16:23:17 00:00:01 snapfuse /var/lib/snapd/snaps/bare_5.snap /snap/bare/5 -o ro,nodev,allow_other,suid
+root         102  0.0  0.0 152992  1408 ?        Ssl  16:23:17 00:00:00 snapfuse /var/lib/snapd/snaps/core22_2111.snap /snap/core22/2111 -o ro,nodev,allow_other,suid</pre>
+</div>
+<div class="subsection">
+<h3>Zombies</h3>
+<pre>
+Aucun</pre>
+</div>
+</details>
+<details open>
+<summary>Groupe: Services</summary>
+<div class="subsection">
+<h3>Services critiques</h3>
+<pre>
+ssh: active
+cron: active
+rsyslog: active
+systemd-networkd: inactive</pre>
+</div>
+</details>
+<details open>
+<summary>Groupe: Réseau</summary>
+<div class="subsection">
+<h3>Connectivité</h3>
+<pre>
+8.8.8.8: OK
+1.1.1.1: OK
+google.com: OK</pre>
+</div>
+<div class="subsection">
+<h3>Interfaces</h3>
+<pre>
+lo               UNKNOWN        127.0.0.1/8 10.255.255.254/32 ::1/128 
+eth0             UP             172.25.181.111/20 fe80::215:5dff:feb2:c375/64 </pre>
+</div>
+<div class="subsection">
+<h3>Ports à l'écoute</h3>
+<pre>
+LISTEN 0      128           0.0.0.0:22         0.0.0.0:*          
+LISTEN 0      4096        127.0.0.1:27017      0.0.0.0:*          
+LISTEN 0      151         127.0.0.1:3306       0.0.0.0:*          
+LISTEN 0      1000   10.255.255.254:53         0.0.0.0:*          
+LISTEN 0      70          127.0.0.1:33060      0.0.0.0:*          
+LISTEN 0      244         127.0.0.1:5432       0.0.0.0:*          
+LISTEN 0      4096    127.0.0.53%lo:53         0.0.0.0:*          
+LISTEN 0      128              [::]:22            [::]:*          </pre>
+</div>
+<div class="subsection">
+<h3>Trafic (1s)</h3>
+<pre>
+eth0: rx=0 bytes/s, tx=0 bytes/s
+lo: rx=0 bytes/s, tx=0 bytes/s</pre>
+</div>
+</details>
+<section>
+  <h2>Logs récents</h2>
+  <pre>
+[2025-10-05 18:20:51] [INFO] Début monitoring SysMonitor Pro
+[2025-10-05 18:20:51] [INFO] Nettoyage en cours...
+[2025-10-05 18:21:42] [INFO] Début monitoring SysMonitor Pro
+[2025-10-05 18:21:43] [SUCCESS] Monitoring terminé avec succès
+[2025-10-05 18:21:43] [INFO] Nettoyage en cours...
+[2025-10-05 19:00:08] [INFO] Début monitoring SysMonitor Pro
+[2025-10-05 19:00:19] [SUCCESS] Monitoring terminé avec succès
+[2025-10-05 19:01:12] [INFO] Début monitoring SysMonitor Pro
+[2025-10-05 19:01:19] [SUCCESS] Monitoring terminé avec succès
+[2025-10-05 19:01:19] [INFO] Nettoyage en cours...
+[2025-10-05 19:03:05] [INFO] Début monitoring SysMonitor Pro
+[2025-10-05 19:03:14] [SUCCESS] Monitoring terminé avec succès
+[2025-10-05 19:03:14] [INFO] Nettoyage en cours...
+[2025-10-05 19:09:38] [INFO] Début monitoring SysMonitor Pro
+[2025-10-05 19:09:45] [SUCCESS] Monitoring terminé avec succès
+[2025-10-05 19:09:45] [INFO] Nettoyage en cours...
+[2025-10-05 19:15:05] [INFO] Début monitoring SysMonitor Pro
+[2025-10-05 19:15:12] [SUCCESS] Monitoring terminé avec succès
+[2025-10-05 19:15:12] [INFO] Nettoyage en cours...
+[2025-10-05 19:21:37] [INFO] Nettoyage en cours...
+[2025-10-05 19:54:47] [INFO] Début monitoring SysMonitor Pro
+[2025-10-05 19:54:54] [SUCCESS] Monitoring terminé avec succès
+[2025-10-05 19:54:54] [INFO] Nettoyage en cours...
+[2025-10-05 20:07:59] [INFO] Début monitoring SysMonitor Pro  </pre>
+</section>
+  </body>
+</html>
